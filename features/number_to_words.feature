@@ -1,7 +1,7 @@
 Feature: Convert a dollar amount to string representation
 
     Scenario: Less than one dollar
-        When I run `node ../../src/exercise1.js 0.14`
+        When I run `node ../../src/number_to_words.js 0.14`
         Then it should pass with:
         """
         Convert 0.14
@@ -9,7 +9,7 @@ Feature: Convert a dollar amount to string representation
         """
 
     Scenario: It should render a trailing zero when cents divisible by 10
-        When I run `node ../../src/exercise1.js 0.20`
+        When I run `node ../../src/number_to_words.js 0.20`
         Then it should pass with:
         """
         Convert 0.20
@@ -17,7 +17,7 @@ Feature: Convert a dollar amount to string representation
         """
 
     Scenario: One dollar even still shows cents
-        When I run `node ../../src/exercise1.js 1.00`
+        When I run `node ../../src/number_to_words.js 1.00`
         Then it should pass with:
         """
         Convert 1.00
@@ -25,7 +25,7 @@ Feature: Convert a dollar amount to string representation
         """
 
     Scenario: Dollar values over twenty and under one hundred are hyphenated
-        When I run `node ../../src/exercise1.js 22.32`
+        When I run `node ../../src/number_to_words.js 22.32`
         Then it should pass with:
         """
         Convert 22.32
@@ -33,7 +33,7 @@ Feature: Convert a dollar amount to string representation
         """
 
     Scenario: Hundreds of dollars are displayed with a space
-        When I run `node ../../src/exercise1.js 443.50`
+        When I run `node ../../src/number_to_words.js 443.50`
         Then it should pass with:
         """
         Convert 443.50
@@ -41,7 +41,7 @@ Feature: Convert a dollar amount to string representation
         """
 
     Scenario: Thousands of dollars are also displayed with a space
-        When I run `node ../../src/exercise1.js 5657.75`
+        When I run `node ../../src/number_to_words.js 5657.75`
         Then it should pass with:
         """
         Convert 5657.75
@@ -49,7 +49,7 @@ Feature: Convert a dollar amount to string representation
         """
     
     Scenario: Handles tens of thousands of dollars
-        When I run `node ../../src/exercise1.js 30869.00`
+        When I run `node ../../src/number_to_words.js 30869.00`
         Then it should pass with:
         """
         Convert 30869.00
@@ -57,7 +57,7 @@ Feature: Convert a dollar amount to string representation
         """
 
     Scenario: Handles hundreds of thousands of dollrs
-        When I run `node ../../src/exercise1.js 999999.99`
+        When I run `node ../../src/number_to_words.js 999999.99`
         Then it should pass with:
         """
         Convert 999999.99
@@ -65,14 +65,14 @@ Feature: Convert a dollar amount to string representation
         """
 
     Scenario: Millions are rejected
-        When I run `node ../../src/exercise1.js 1000000.00`
+        When I run `node ../../src/number_to_words.js 1000000.00`
         Then it should pass with:
         """
         Only values between 0 and 999999.99 are supported. Please enter a supported number.
         """
 
     Scenario: Negative numbers are rejected
-        When I run `node ../../src/exercise1.js -0.01`
+        When I run `node ../../src/number_to_words.js -0.01`
         Then it should pass with:
         """
         Only values between 0 and 999999.99 are supported. Please enter a supported number.
